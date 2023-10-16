@@ -11,25 +11,13 @@ app.use(cors());
 
 
 
-app.use((req, res, next) => {
-  // Replace 'https://chat-ui-six-swart.vercel.app' with the actual origin that needs access.
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://chat-ui-six-swart.vercel.app"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
-
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
-    transports: ["websocket", "polling"],
-    credentials: true,
+    transports: ["websocket", "polling"]
   },
   allowEIO4: true,
 });
