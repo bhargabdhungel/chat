@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { io } from "socket.io-client"
-const socket = io("http://localhost:3000");
+import { io } from "socket.io-client";
 
+
+const socket = io("https://chat-api-blue.vercel.app/",{
+  transports: ["websocket"],
+});
 
 function App() {
   const [messages, setMessages] = useState([]);
