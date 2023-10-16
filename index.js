@@ -48,4 +48,7 @@ io.on("connection", (socket) => {
 
 server.listen(PORT, (req,res,next) => {
   console.log(`✅ Server is running on port ${PORT}`);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
 });
