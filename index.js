@@ -10,13 +10,14 @@ const app = express();
 const server = http.createServer(app);
 app.use(cors());
 
-const io = new Server(server,{
+const io = new Server(server, {
   cors: {
     origin: "*",
     methods: ["GET", "POST"],
-    transports: ['websocket', 'polling'],
-    credentials: true
+    transports: ["websocket", "polling"],
+    credentials: true,
   },
+  allowEIO3: true,
 });
 
 
