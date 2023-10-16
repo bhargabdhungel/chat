@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
 
-const socket = io("https://chat-api-blue.vercel.app/");
+// const socket = io("http://localhost:3000");
 
 function App() {
+  const socket = io("https://chat-api-blue.vercel.app/");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className="w-[600px] h-[460px]">
-      <div className="h-[400px] w-[600px] bg-gray-400 rounded-t-lg p-10 flex flex-col justify-start gap-2 overflow-auto">
+      <div className="h-[400px] w-[600px] bg-gray-400 rounded-t-lg p-10 flex flex-col justify-start overflow-auto">
         {messages.map((message, index) => (
           <div key={index} className="w-[100%] h-[50px] rounded-lg">
             <p>{message}</p>
