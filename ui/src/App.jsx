@@ -35,7 +35,7 @@ function App() {
     <div className="w-[600px] h-[460px]">
       <div className="h-[400px] w-[600px] bg-gray-400 rounded-t-lg p-10 flex flex-col justify-start gap-2 overflow-auto">
         {messages.map((message, index) => (
-          <div key={index} className="w-[100%] h-[50px] bg-gray-200 rounded-lg">
+          <div key={index} className="w-[100%] h-[50px] rounded-lg">
             <p>{message}</p>
           </div>
         ))}
