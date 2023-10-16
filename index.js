@@ -4,9 +4,11 @@ import mongoose from "mongoose";
 import Signup from "./signup.js";
 import http from "http";
 import { Server } from "socket.io";
+import cors from "cors";
 
 const app = express();
 const server = http.createServer(app);
+app.use(cors());
 
 const io = new Server(server,{
   cors: {
